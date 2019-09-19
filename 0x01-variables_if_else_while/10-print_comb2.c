@@ -14,15 +14,17 @@ int main(void)
 	{
 		for (ch2 = '0'; ch2 <= '9'; ch2++)
 		{
-			putchar(ch1);
-			putchar(ch2);
-
 			if (ch1 == '9' && ch2 == '9')
 			{
-				continue;
+				putchar(ch1);
+				putchar(ch2);
 			}
-			
-			putchar(' ');
+			else
+			{
+				putchar(ch1);
+				putchar(ch2);
+				putchar(' ');
+			}
 		}
 	}
 
