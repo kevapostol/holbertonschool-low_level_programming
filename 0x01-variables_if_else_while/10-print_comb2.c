@@ -16,11 +16,13 @@ int main(void)
 		{
 			putchar(ch1);
 			putchar(ch2);
-			putchar(' ');
+
 			if (ch1 == '9' && ch2 == '9')
 			{
 				break;
 			}
+			
+			putchar(' ');
 		}
 	}
 
