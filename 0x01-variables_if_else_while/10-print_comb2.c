@@ -19,7 +19,7 @@ int main(void)
 
 			if (ch1 == '9' && ch2 == '9')
 			{
-				break;
+				continue;
 			}
 			
 			putchar(' ');
