@@ -21,5 +21,6 @@ int main(void)
 		if(ch == 'Z')
 			putchar('\n');
 	}
+
 	return (0);
 }
