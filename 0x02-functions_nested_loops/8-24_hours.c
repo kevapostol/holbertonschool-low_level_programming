@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_last_digit - prints the last digit
- * @n: the number passed to be tested
+ * jack_bauer - prints starting from 00:00 to 23:59
  *
- * Return: return the n's last digit
+ *
+ * Return: void
  *
  */
 
