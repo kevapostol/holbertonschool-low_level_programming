@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * print_alphabet prints characters from a to z
+ * print_alphabet - writes the character c to stdout
  *
- * Returns void
+ *
+ * Return: void
+ * Prints from a to z with a newline
  */
 void print_alphabet(void)
 {
