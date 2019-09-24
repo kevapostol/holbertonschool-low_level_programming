@@ -1,13 +1,24 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - Functions and Nested Loops
+ * print_alphabet_x10 - prints a to z ten times
  *
- * Return: Always 0 (Success)
+ *
+ * Return: void
+ * Prints from a to z 10 times with a newline
  */
-
-int main(void)
+void print_alphabet_x10(void)
 {
+	int ch;
+	int i;
 
-	return (0);
+	for (i = 0; i < 9; i += 1)
+	{
+		for (ch = 'a'; ch <= 'z'; ch += 1)
+		{
+			_putchar(ch);
+		}
+
+		_putchar('\n');
+	}
 }
