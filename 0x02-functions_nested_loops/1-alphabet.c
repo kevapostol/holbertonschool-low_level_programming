@@ -1,19 +1,9 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
- * main - Functions and Nested Loops
+ * print_alphabet prints characters from a to z
  *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
-/**
- * print_alphabet - prints characters from a to z
+ * Returns void
  */
 void print_alphabet(void)
 {
