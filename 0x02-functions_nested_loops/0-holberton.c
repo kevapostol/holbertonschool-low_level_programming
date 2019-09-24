@@ -9,6 +9,6 @@
 
 int main(void)
 {
-	printf("Holberton\n");
+	printHolberton();
 	return (0);
 }
