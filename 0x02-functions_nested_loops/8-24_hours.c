@@ -16,7 +16,7 @@ void jack_bauer(void)
 
 	for (t1 = 0; t1 <= 23; t1 += 1)
 	{
-		for (t2 = 0; t2 < 59; t2 += 1)
+		for (t2 = 0; t2 <= 59; t2 += 1)
 		{
 			printf("%02d:%02d\n", t1, t2);
 		}
