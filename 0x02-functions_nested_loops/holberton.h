@@ -1,4 +1,1 @@
-void printHolberton(void)
-{
-	printf("Holberton\n");
-}
+int _putchar(char c);
