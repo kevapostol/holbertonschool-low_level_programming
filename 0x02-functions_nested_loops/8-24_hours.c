@@ -11,14 +11,42 @@
 
 void jack_bauer(void)
 {
-	int t1;
-	int t2;
+	int t1 = 0;
+	int t2 = 0;
+	int t3 = 0;
+	int t4 = 0;
 
-	for (t1 = 0; t1 <= 23; t1 += 1)
+	while (1)
 	{
-		for (t2 = 0; t2 <= 59; t2 += 1)
+		_putchar(t1 + '0');
+		_putchar(t2 + '0');
+		_putchar(':');
+		_putchar(t3 + '0');
+		_putchar(t4 + '0');
+		_putchar('\n');
+		t4 += 1;
+
+		if (t4 == 10)
 		{
-			printf("%02d:%02d\n", t1, t2);
+			t4 = 0;
+			t3 += 1;
+
+			if (t3 == 6)
+			{
+				t3 = 0;
+				t2 += 1;
+
+				if (t1 == 2 && t2 == 4)
+				{
+					break;
+				}
+
+				if (t2 == 10)
+				{
+					t2 = 0;
+					t1 += 1;
+				}
+			}
 		}
 	}
 }
