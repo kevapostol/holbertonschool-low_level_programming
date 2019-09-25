@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * jack_bauer - prints starting from 00:00 to 23:59
