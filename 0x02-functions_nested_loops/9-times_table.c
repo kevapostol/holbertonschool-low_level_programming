@@ -24,6 +24,7 @@ void times_table(void)
 		for (j = 1; j < 10; j += 1)
 		{
 			int num = i * j;
+
 			num1 = (num / 10) % 10;
 			num2 = num % 10;
 
