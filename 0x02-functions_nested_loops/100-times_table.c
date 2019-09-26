@@ -20,14 +20,17 @@ void print_times_table(int n)
 			{
 				int prod = i * j;
 
-				if (prod < 10 && j != n)
-					printf("%d,   ", prod);
-				else if (prod >= 100 && j != n)
-					printf("%d, ", prod);
-				else if (j == n)
+				if (j == 0)
 					printf("%d", prod);
+				else if (prod < 10 && j != n)
+					printf("   %d", prod);
+				else if (prod >= 100 && j != n)
+					printf(" %d", prod);
 				else
-					printf("%d,  ", prod);
+					printf("  %d", prod);
+
+				if (j != n)
+					printf(",");
 			}
 
 			printf("\n");
