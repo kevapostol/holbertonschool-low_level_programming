@@ -15,7 +15,9 @@ void print_number(int n)
 		_putchar('-');
 		n *= -1;
 	}
-
+	
+	if (n >= 10000)
+		_putchar(((n / 10000)  % 10) + '0');
 	if (n >= 1000)
 		_putchar(((n / 1000)  % 10) + '0');
 	if (n >= 100)
