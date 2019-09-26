@@ -19,8 +19,8 @@ void print_triangle(int size)
 		printf("\n");
 	else
 	{
-	for (i = 0; i < size; i += 1)
-	{
+		for (i = 0; i < size; i += 1)
+		{
 			for (j = 0; j < space_num; j += 1)
 				printf(" ");
 			space_num -= 1;
