@@ -22,9 +22,9 @@ void print_times_table(int n)
 
 				if (j == 0)
 					printf("%d", prod);
-				else if (prod < 10 && j != n)
+				else if (prod < 10)
 					printf("   %d", prod);
-				else if (prod >= 100 && j != n)
+				else if (prod >= 100)
 					printf(" %d", prod);
 				else
 					printf("  %d", prod);
