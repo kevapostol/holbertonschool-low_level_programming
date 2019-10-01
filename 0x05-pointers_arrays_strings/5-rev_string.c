@@ -19,7 +19,7 @@ void rev_string(char *s)
 	t--;
 	length--;
 
-	for (i = 0; i < length / 2; i++)
+	for (i = 0; i <= length / 2; i++)
 	{
 		char temp = *t;
 		*t = *s;
