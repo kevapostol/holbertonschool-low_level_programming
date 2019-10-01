@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * swap_int - swaps the values of two integers
- * @*a: pointer
- * @*b: pointer
+ * _strlen - returns the len of a string
+ * @s: string
+ *
  *
  * Return: returns nothing
  *
@@ -11,9 +11,9 @@
 int _strlen(char *s)
 {
 	int n;
-	
+
 	for (n = 0; *s != '\0'; s++)
 		n++;
 
-	return n;
+	return (n);
 }
