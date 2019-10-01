@@ -12,13 +12,16 @@ void print_rev(char *s)
 	int n, len;
 
 	for (n = 0; *s != '\0'; s++)
+	{
 		n++;
+	}
 
 	len = n;
 
-	for (; len >= 0; len--, s--)
+	for (; len >= 0; len--)
 	{
 		_putchar(*s);
+		s--;
 	}
 
 	_putchar('\n');
