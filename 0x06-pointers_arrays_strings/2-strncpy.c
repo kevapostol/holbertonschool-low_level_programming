@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strncat - function that concatenates two strings
+ * _strncpy - function that copies a string
  * @dest: pointer dest
  * @src: pointer dest
  * @n: use at most n bytes from src
