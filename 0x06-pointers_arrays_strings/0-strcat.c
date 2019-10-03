@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * reset_to_98 - updates the parameter to 98
- * @n: pointer
+ * _strcat - function that concatenates two strings
+ * @dest: pointer dest
+ * @src: pointer dest
  *
- *
- * Return: returns nothing
+ * Return: returns character pointer
  *
  */
 char *_strcat(char *dest, char *src)
@@ -22,5 +22,5 @@ char *_strcat(char *dest, char *src)
 	}
 
 	dest[countDestLen + i] = '\0';
-	return dest;
+	return (dest);
 }
