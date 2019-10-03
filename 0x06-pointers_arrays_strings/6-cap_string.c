@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * string_toupper - reverses the content of an array of integers
+ * cap_string - capitalizes the string
  * @c: pointer, array
  *
  *
@@ -16,7 +16,7 @@ char *cap_string(char *c)
 	{
 		if (c[ctr] == ' ' || c[ctr] == '\t' || c[ctr] == '\n' || c[ctr] == ',' ||
 			c[ctr] == ';' || c[ctr] == '.' || c[ctr] == '!' || c[ctr] == '?' ||
-			c[ctr] == '"' || c[ctr] == '(' || c[ctr] == ')' || c[ctr] == '{' || 
+			c[ctr] == '"' || c[ctr] == '(' || c[ctr] == ')' || c[ctr] == '{' ||
 			c[ctr] == '}')
 		{
 			if (c[ctr + 1] >= 'a' && c[ctr + 1] <= 'z')
