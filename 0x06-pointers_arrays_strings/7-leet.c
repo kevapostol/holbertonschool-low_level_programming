@@ -1,32 +1,29 @@
 #include "holberton.h"
 
 /**
- * cap_string - capitalizes the string
+ * leet - encodes a string into 1337
  * @c: pointer, array
  *
  *
  * Return: no return
  *
  */
-char *cap_string(char *c)
+char *leet(char *c)
 {
 	int ctr = 0;
 
-	while (c[ctr])
+	while (c[ctr] != '\0')
 	{
-		if (c[0] >= 'a' && c[0] <= 'z')
-			c[0] -= 32;
-		else
-		{
-			if (c[ctr] == ' ' || c[ctr] == '\t' || c[ctr] == '\n' || c[ctr] == ',' ||
-			c[ctr] == ';' || c[ctr] == '.' || c[ctr] == '!' || c[ctr] == '?' ||
-			c[ctr] == '"' || c[ctr] == '(' || c[ctr] == ')' || c[ctr] == '{' ||
-			c[ctr] == '}')
-			{
-				if (c[ctr + 1] >= 'a' && c[ctr + 1] <= 'z')
-					c[ctr + 1] -= 32;
-			}
-		}
+		if (c[ctr] == 'a' || c[ctr] == 'A')
+			c[ctr] = '4';
+		else if (c[ctr] == 'e' || c[ctr] == 'E')
+			c[ctr] = '3';
+		else if (c[ctr] == 'o' || c[ctr] == 'O')
+			c[ctr] = '0';
+		else if (c[ctr] == 't' || c[ctr] == 'T')
+			c[ctr] = '7';
+		else if (c[ctr] == 'l' || c[ctr] == 'L')
+			c[ctr] = '1';
 		ctr++;
 	}
 	return (c);
