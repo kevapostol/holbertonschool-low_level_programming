@@ -5,25 +5,26 @@
  * @c: pointer, array
  *
  *
- * Return: no return
+ * Return: pointer
  *
  */
 char *leet(char *c)
 {
 	int ctr = 0;
+	char letters[] = "aeotl";
+	char numbers[] = "43071";
 
 	while (c[ctr] != '\0')
 	{
-		if (c[ctr] == 'a' || c[ctr] == 'A')
-			c[ctr] = '4';
-		else if (c[ctr] == 'e' || c[ctr] == 'E')
-			c[ctr] = '3';
-		else if (c[ctr] == 'o' || c[ctr] == 'O')
-			c[ctr] = '0';
-		else if (c[ctr] == 't' || c[ctr] == 'T')
-			c[ctr] = '7';
-		else if (c[ctr] == 'l' || c[ctr] == 'L')
-			c[ctr] = '1';
+		int ltr_ctr = 0;
+
+		while (letters[ltr_ctr] != '\0')
+		{
+			if (c[ctr] == letters[ltr_ctr] || c[ctr] == (letters[ltr_ctr] - 32))
+				c[ctr] = numbers[ltr_ctr];
+
+			ltr_ctr++;
+		}
 		ctr++;
 	}
 	return (c);
