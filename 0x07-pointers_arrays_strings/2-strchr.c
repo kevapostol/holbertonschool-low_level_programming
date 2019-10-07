@@ -1,5 +1,5 @@
 #include "holberton.h"
-#define NULL ((void *)0)
+#include <stdio.h>
 /**
  * _strchr - function that locates a character in a string
  * @s: pointer, an array
@@ -18,5 +18,5 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	return (0);
+	return (NULL);
 }
