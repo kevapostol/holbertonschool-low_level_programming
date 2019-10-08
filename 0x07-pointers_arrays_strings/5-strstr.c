@@ -10,7 +10,7 @@
  */
 int comp(char *x, char *y)
 {
-	while (*x && *y)
+	while (*x && *y && *x != '\0' && *y != '\0')
 	{
 		if (*x != *y)
 			return (0);
@@ -18,7 +18,7 @@ int comp(char *x, char *y)
 		y++;
 	}
 
-	return (*y == '\0');
+	return (*x == *y);
 }
 
 /**
@@ -38,9 +38,6 @@ char *_strstr(char *haystack, char *needle)
 		}
 		haystack++;
 	}
-
-	if (*haystack == *needle)
-		return (haystack);
 
 	return (NULL);
 }
