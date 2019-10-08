@@ -1,11 +1,11 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * comp - compares 2 strings
- * @x: string 1
- * @y: string 2
+ * print_chessboard - prints the chessboard
+ * @a: pointer of 2d Array
  *
- * Return: true or false, integer
+ *
+ * Return: void, no return
  *
  */
 void print_chessboard(char (*a)[8])
