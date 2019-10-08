@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * _strspn - function that locates a character in a string
- * @s: pointer, an array
- * @accept: pointer, an array
+ * set_string - sets the value of a pointer to a char
+ * @s: pointer, double pointer
+ * @to: pointer
  *
- * Return: count, integer
+ * Return: void
  *
  */
 void set_string(char **s, char *to)
