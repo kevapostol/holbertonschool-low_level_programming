@@ -1,21 +1,32 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
- * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
+ * _sqrt_recursion_helper - helper for finding sqrt, recursion
+ * @n: int, number for finding sqrt
+ * @count: int, counter
+ *
  * Return: returns array that is a pointer
  *
  */
-char *_memset(char *s, char b, unsigned int n)
+int _sqrt_recursion_helper(int n, int count)
 {
-	unsigned int i;
+	if (n == 0 || n == 1)
+		return (1);
+	if (n == count || n < 0)
+		return (-1);
+	if (count * count == n)
+		return (count);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+	return (_sqrt_recursion_helper(n, count + 1));
+}
 
-	return (s);
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: int, number
+ *
+ * Return: int, returns the sqrt
+ */
+int _sqrt_recursion(int n)
+{
+	return (_sqrt_recursion_helper(n, 1));
 }
