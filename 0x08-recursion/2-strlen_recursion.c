@@ -1,21 +1,27 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
+ * _strlen_recursion_helper - returns the length
  * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ * @num: int, length of string
  *
+ * Return: return the length
  */
-char *_memset(char *s, char b, unsigned int n)
+int _strlen_recursion_helper(char *s, int num)
 {
-	unsigned int i;
+	if (*s == '\0')
+		return (num);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+		return (_strlen_recursion_helper(s + 1, num + 1));
+}
 
-	return (s);
+/**
+ * _strlen_recursion - returns the length of a string
+ * @s: pointer, to a string that is char
+ *
+ * Return: int, number of length
+ */
+int _strlen_recursion(char *s)
+{
+	return (_strlen_recursion_helper(s, 0));
 }
