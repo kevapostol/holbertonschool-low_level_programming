@@ -1,21 +1,23 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
- * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ * _pow_recursion - returns the value of x raised to the power of y
+ * @x: int, num
+ * @y: int, pow
+ *
+ * Return: integer, pow
  *
  */
-char *_memset(char *s, char b, unsigned int n)
+int _pow_recursion(int x, int y)
 {
-	unsigned int i;
+	if (y < 0)
+		return (-1);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+	if (y == 0)
+		return (1);
 
-	return (s);
+	if (y == 1)
+		return (x);
+
+	return (x * _pow_recursion(x, y - 1));
 }
