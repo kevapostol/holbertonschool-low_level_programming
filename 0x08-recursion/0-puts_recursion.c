@@ -8,14 +8,16 @@
  * Return: returns array that is a pointer
  *
  */
-char *_memset(char *s, char b, unsigned int n)
+void _puts_recursion(char *s)
 {
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
+	if (*s == '\0')
 	{
-		s[i] = b;
+		_putchar('\n');
+		return;
 	}
 
-	return (s);
+	if (*s != '\0')
+		_putchar(*s);
+
+	_puts_recursion(s + 1);
 }
