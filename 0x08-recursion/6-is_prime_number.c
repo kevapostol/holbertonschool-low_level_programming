@@ -1,21 +1,32 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
- * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ * is_prime_number_helper - helper for finding prime
+ * @n: int, number for finding prime
+ * @count: int, counter
+ *
+ * Return: returns int boolean if prime
  *
  */
-char *_memset(char *s, char b, unsigned int n)
+int is_prime_number_helper(int n, int count)
 {
-	unsigned int i;
+	if (n <= 1)
+		return (0);
+	if (n % count == 0)
+		return (0);
+	if (count == 2 && n % count != 0)
+		return (1);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+	return (is_prime_number_helper(n, count - 1));
+}
 
-	return (s);
+/**
+ * is_prime_number - returns 1 if the input is a prime number, otherwise 0
+ * @n: int, number
+ *
+ * Return: int, returns int the boolean if prime
+ */
+int is_prime_number(int n)
+{
+	return (is_prime_number_helper(n, n - 1));
 }
