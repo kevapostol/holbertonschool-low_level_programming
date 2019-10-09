@@ -1,27 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * comp - compares 2 strings
- * @x: string 1
- * @y: string 2
- *
- * Return: true or false, integer
- *
- */
-int comp(char *x, char *y)
-{
-	while (*x && *y && *x != '\0' && *y != '\0')
-	{
-		if (*x != *y)
-			return (0);
-		x++;
-		y++;
-	}
-
-	return (*x == *y);
-}
-
-/**
  * _strstr - unction that locates a substring
  * @haystack: pointer, an array
  * @needle: pointer, an array
@@ -30,13 +9,18 @@ int comp(char *x, char *y)
  */
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack && *haystack != 0)
+	int i, j;
+
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		if (*haystack == *needle && comp(haystack, needle))
+		for (j = 0; needle[j] != '\0'; j++)
 		{
-			return (haystack);
+			if (haystack[i + j] != needle[j])
+				break;
+
+			if (needle[j + 1] == '\0')
+				return ((haystack + i));
 		}
-		haystack++;
 	}
 
 	return (NULL);
