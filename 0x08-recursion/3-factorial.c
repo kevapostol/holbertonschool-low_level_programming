@@ -1,21 +1,18 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
- * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ * factorial - function that copies memory area
+ * @n: int, number
  *
+ * Return: returns array that is a pointer
  */
-char *_memset(char *s, char b, unsigned int n)
+int factorial(int n)
 {
-	unsigned int i;
+	if (n < 0)
+		return (-1);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+	if (n == 1)
+		return (1);
 
-	return (s);
+	return n * factorial(n - 1);
 }
