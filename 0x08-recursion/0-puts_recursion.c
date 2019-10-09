@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
+ * _puts_recursion - prints a string, followed by a new line
  * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ *
+ *
+ * Return: void, returns nothing
  *
  */
 void _puts_recursion(char *s)
