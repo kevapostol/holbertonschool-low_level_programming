@@ -10,7 +10,7 @@
  */
 int is_palindrome_helper(char *c, int s, int e)
 {
-	if (e == 0 && c[s] == c[e])
+	if (s == e)
 		return (1);
 	if (c[s] != c[e])
 		return (0);
