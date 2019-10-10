@@ -33,5 +33,7 @@ int is_palindrome(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		count += 1;
 
+	if (count == 0)
+		return (1);
 	return (is_palindrome_helper(s, 0, count - 1));
 }
