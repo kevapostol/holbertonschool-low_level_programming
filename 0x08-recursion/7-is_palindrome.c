@@ -8,14 +8,15 @@
  * Return: returns int boolean if palindrome or not
  *
  */
-int is_palindrome_helper(char *c, int count, int count2)
+int is_palindrome_helper(char *c, int s, int e)
 {
-	if (count == 0 && c[count2] == c[count])
+	if (e == 0 && c[s] == c[e])
 		return (1);
-	if (c[count2] != c[count])
+	if (c[s] != c[e])
 		return (0);
-
-	return (is_palindrome_helper(c, count - 1, count2 + 1));
+	if (s < e + 1)
+		return (is_palindrome_helper(c, s + 1, e - 1));
+	return (1);
 }
 
 /**
@@ -32,5 +33,5 @@ int is_palindrome(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		count += 1;
 
-	return (is_palindrome_helper(s, count - 1, 0));
+	return (is_palindrome_helper(s, 0, count - 1));
 }
