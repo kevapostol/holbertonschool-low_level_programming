@@ -1,21 +1,36 @@
 #include "holberton.h"
 
 /**
- * _memset - function that copies memory area
- * @s: pointer, an array
- * @b: char, a constant byte
- * @n: int, bytes of memory
- * Return: returns array that is a pointer
+ * is_palindrome_helper - helper function for finding a palindrome
+ * @c: char, pointer to array
+ * @count: int, length of array
+ *
+ * Return: returns int boolean if palindrome or not
  *
  */
-char *_memset(char *s, char b, unsigned int n)
+int is_palindrome_helper(char *c, int count)
 {
-	unsigned int i;
+	if (*c == '\0')
+		return (1);
+	if (*c != c[count])
+		return (0);
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
+	return (is_palindrome_helper(c + 1, count - 2));
+}
 
-	return (s);
+/**
+ * is_palindrome -  returns 1 if a string is a palindrome and 0 if not
+ * @s: pointer to char, an array
+ *
+ * Return: returns in 1 if palindrome 0 if not
+ */
+int is_palindrome(char *s)
+{
+	int count = 0;
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		count += 1;
+
+	return (is_palindrome_helper(s, count - 1));
 }
