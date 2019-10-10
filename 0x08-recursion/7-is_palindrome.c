@@ -2,9 +2,9 @@
 
 /**
  * is_palindrome_helper - helper function for finding a palindrome
- * @c: char, pointer to array
- * @count: int, length of array
- *
+ * @s: int, counter for start
+ * @e: int, counter for end
+ * @c: char, the string
  * Return: returns int boolean if palindrome or not
  *
  */
@@ -19,6 +19,12 @@ int is_palindrome_helper(char *c, int s, int e)
 	return (1);
 }
 
+/**
+ * getLen - gets the length of a string
+ * @s: char pointer to a string
+ *
+ * Return: return int, the length of a string
+ */
 int getLen(char *s)
 {
 	if (*s == '\0')
