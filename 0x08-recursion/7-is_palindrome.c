@@ -19,6 +19,14 @@ int is_palindrome_helper(char *c, int s, int e)
 	return (1);
 }
 
+int getLen(char *s)
+{
+	if (*s == '\0')
+		return (0);
+
+	return (1 + getLen(s + 1));
+}
+
 /**
  * is_palindrome -  returns 1 if a string is a palindrome and 0 if not
  * @s: pointer to char, an array
@@ -27,11 +35,7 @@ int is_palindrome_helper(char *c, int s, int e)
  */
 int is_palindrome(char *s)
 {
-	int count = 0;
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		count += 1;
+	int count = getLen(s);
 
 	if (count == 0)
 		return (1);
