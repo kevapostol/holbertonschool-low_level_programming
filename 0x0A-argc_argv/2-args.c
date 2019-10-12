@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * main - prints the number of arguments passed into it
+ * main - prints all arguments it receives
  * @argc: number of arguments
  * @argv: argument vector
  * Return: void returns nothing
