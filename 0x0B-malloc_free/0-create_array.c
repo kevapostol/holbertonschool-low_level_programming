@@ -2,15 +2,15 @@
 #include "holberton.h"
 
 /**
- * main - main function, passes n arguments
- * @argc: number of arguments
- * @argv: argument vector
+ * create_array - creates an array of chars, and initializes it
+ * @size: int, to be the length of the array
+ * @c: character, to be inserted to the array
  * Return: void returns nothing
  *
  */
 char *create_array(unsigned int size, char c)
 {
-	char *arr = (char*) malloc(size * sizeof(char));
+	char *arr = (char *) malloc(size * sizeof(char));
 
 	unsigned int i = 0;
 
