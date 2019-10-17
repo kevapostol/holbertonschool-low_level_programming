@@ -20,11 +20,11 @@ char *_memset(char *s, char b, int n)
 	return (s);
 }
 /**
- * string_nconcat - concatenates two strings
- * @s1: string 1
- * @s2: string 2
- * @n: n bytes
- * Return: pointer to a char
+ * _calloc - allocates memory for an array, using malloc
+ * @nmemb: int, array
+ * @size: int, size
+ *
+ * Return: pointer points to void
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
