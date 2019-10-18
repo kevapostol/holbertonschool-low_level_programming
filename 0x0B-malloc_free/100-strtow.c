@@ -82,7 +82,7 @@ char **strtow(char *str)
 			s[j] = malloc((wordLen(str + i) + 1) * sizeof(char));
 			if (s[j] == NULL)
 			{
-				freeMemchar(s, j);
+				freeMemchar(s, wordCount(str) + 1);
 				return (NULL);
 			}
 			for (k = 0; str[i] && str[i] != ' '; i++, k++)
@@ -91,6 +91,6 @@ char **strtow(char *str)
 			j++;
 		}
 	}
-	s[j] = '\0';
+	s[wordCount(str) + 1] = '\0';
 	return (s);
 }
