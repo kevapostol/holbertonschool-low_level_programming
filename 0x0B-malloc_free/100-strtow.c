@@ -91,6 +91,6 @@ char **strtow(char *str)
 			j++;
 		}
 	}
-	s[wordCount(str) + 1] = '\0';
+	s[wordCount(str)] = '\0';
 	return (s);
 }
