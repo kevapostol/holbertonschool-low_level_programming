@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include "3-calc.h"
 
+/**
+ * main - main function
+ * @argc: num of args
+ * @argv: vector/arr of arg
+ * Return: none
+ */
 int main(int argc, char *argv[])
 {
 	int num1 = atoi(argv[1]);
