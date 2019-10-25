@@ -2,16 +2,17 @@
 #include "variadic_functions.h"
 
 /**
- * print_name - function that prints a name
- * @name: character pointer of a name
- * @f: function pointer
- * Return: void
+ * sum_them_all - function that returns the sum of all its parameters
+ * @n: num of args, int
+ *
+ * Return: int
  */
 
 int sum_them_all(const unsigned int n, ...)
 {
 	int i = 0, sum = 0;
 	va_list var;
+
 	va_start(var, n);
 
 	for (i = 0; i < (int) n; i++)
