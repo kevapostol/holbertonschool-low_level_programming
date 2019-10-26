@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 				continue;
 		}
 		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-			format[i] == 's') && format[i + 1] != '\0')
+			format[i] == 's') && i != (n - 1))
 			printf("%s", separator);
 		i++;
 	}
