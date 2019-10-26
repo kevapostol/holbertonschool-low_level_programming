@@ -15,9 +15,6 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *separator = ", ", *strTemp = "(nil)", *temp;
 
-	while (format == NULL)
-		return;
-
 	va_start(var, format);
 
 	while (format[i] != '\0')
@@ -44,7 +41,7 @@ void print_all(const char * const format, ...)
 				continue;
 		}
 		if ((format[i] == 'c' || format[i] == 'e' || format[i] == 'i' ||
-			format[i] == 's') && format[i + 1] != '\0')
+			format[i] == 's') && format[i + 1] != '\0' && separator != NULL)
 			printf("%s", separator);
 		i++;
 	}
