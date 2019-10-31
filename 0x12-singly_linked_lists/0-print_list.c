@@ -22,7 +22,7 @@ size_t print_list(const list_t *h)
 		if (tmp_str == NULL)
 			printf("[0] (nil)\n");
 		else
-			printf("[%d] %s\n",h->len, tmp_str);
+			printf("[%d] %s\n", h->len, tmp_str);
 		num_nodes++;
 		h = h->next;
 	}
