@@ -3,25 +3,20 @@
 #include "lists.h"
 
 /**
- * print_list - a function that prints all the elements of a list
+ * list_len - returns the number of elements in a linked
  * @h: pointer to a node
  *
  * Return: int, num of nodes
  */
 
-size_t list_len(const lsit_t *h)
+size_t list_len(const list_t *h)
 {
-	/*list_t *temp = h;*/
-	int num_elements = 0;
-	char *tmp_str;
+	int num_nodes = 0;
 
 	while (h != NULL)
 	{
-		tmp_str = h->str
-		if (tmp_str != NULL)
-			num_elements++;
-		num_elements++;
+		num_nodes++;
 		h = h->next;
 	}
-	return (num_elements;
+	return (num_nodes);
 }
