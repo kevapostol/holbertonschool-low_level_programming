@@ -3,18 +3,21 @@
 #include "lists.h"
 
 /**
- * list_len - returns the number of elements in a linked
- * @h: pointer to a node
+ * free_list - free the list
+ * @head: head pointer
  *
- * Return: int, num of nodes
+ * Return: void
  */
 
 void free_list(list_t *head)
 {
+	list_t *temp;
+
 	while (head != NULL)
 	{
-		free(head->str);
+		temp = head;
+		free(temp->str);
+		free(temp);
 		head = head->next;
 	}
-	free(head);
 }
