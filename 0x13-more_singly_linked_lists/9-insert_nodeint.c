@@ -12,23 +12,23 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	/*Variable declaration*/
 	unsigned int i = 0;
 	listint_t *prev, *new;
-	/*Check for an empty list*/
-	if ((head == NULL || *head == NULL) && idx != 0)
+
+	if (head == NULL || idx < 0)
 		return (NULL);
-	/*clone head to prev*/
+	if (*head == NULL && idx != 0)
+		return (NULL);
+
 	prev = *head;
-	/*malloc new node*/
 	new = malloc(sizeof(listint_t));
-	/*check for malloc*/
 	if (new == NULL)
 		return (NULL);
 
 	if (*head == NULL)
 	{
 		*head = new;
+		new->n = n;
 		new->next = NULL;
 		return (new);
 	}
