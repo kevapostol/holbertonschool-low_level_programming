@@ -1,4 +1,4 @@
-#include <stdio.h>
+i#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -12,7 +12,7 @@
 int pop_listint(listint_t **head)
 {
 	listint_t *temp;
-	int n;
+	int n = 0;
 
 	/*clone head to temp*/
 	temp = *head;
