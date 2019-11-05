@@ -8,7 +8,6 @@
  *
  * Return: int, num of nodes
  */
-
 size_t print_listint(const listint_t *h)
 {
 	int num_nodes = 0;
