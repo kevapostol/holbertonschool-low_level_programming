@@ -25,7 +25,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/*check for malloc*/
 	if (new == NULL)
 		return (NULL);
-
+	/*handles head is null*/
+	if (*head == NULL)
+	{
+		*head = new;
+		new->next = NULL;
+		return (new);
+	}
 	/*edge case for idx = 0*/
 	if (idx == 0)
 	{
