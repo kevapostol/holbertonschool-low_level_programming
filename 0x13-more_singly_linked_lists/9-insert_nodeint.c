@@ -3,10 +3,11 @@
 #include "lists.h"
 
 /**
- * sum_listint - returns the sum of all the data (n) of a linked list
+ * insert_nodeint_at_index - inserts a node at index
  * @head: pointer to a node
- *
- * Return: sum of all data
+ * @idx: index
+ * @n: number to add to node
+ * Return: points to new node
  */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
@@ -19,13 +20,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	temp = *head;
 
-	while(idx - 1 != idx_ctr)
+	while (idx - 1 != idx_ctr)
 	{
 		idx_ctr++;
 		temp = temp->next;
 	}
 
-	if(idx - 1 != idx_ctr)
+	if (idx - 1 != idx_ctr)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
