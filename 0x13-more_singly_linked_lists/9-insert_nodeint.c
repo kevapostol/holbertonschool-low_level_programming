@@ -17,7 +17,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int idx_ctr = 0;
 
 	/*Check for a Empty List*/
-	if (!head || !(*head))
+	if (!head || !(*head) || idx < 0)
 		return (NULL);
 
 	/*Clone head to temp*/
