@@ -12,15 +12,20 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
+	/*Variable declaration*/
 	listint_t *temp;
 	listint_t *new;
 	unsigned int idx_ctr = 0;
 
-	if (head == NULL)
+	/*Check for a Empty List*/
+	if (!head || !(*head))
 		return (NULL);
+
+	/*Clone head to temp*/
 	temp = *head;
 
-	while (idx - 1 != idx_ctr)
+	/*Traverse to idx - 1*/
+	while (idx - 1 != idx_ctr && temp)
 	{
 		idx_ctr++;
 		temp = temp->next;
@@ -29,14 +34,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (idx - 1 != idx_ctr)
 		return (NULL);
 
+	/*Create a new node*/
 	new = malloc(sizeof(listint_t));
 
+	/*Check Malloc*/
 	if (new == NULL)
 		return (NULL);
 
 	if (idx == 0)
 	{
-		new->next = *head;
+		new->n = n;
+		new->next = (*head)->next;
 		*head = new;
 	}
 	else if (temp)
