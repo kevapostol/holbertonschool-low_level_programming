@@ -14,6 +14,9 @@ int pop_listint(listint_t **head)
 	listint_t *temp;
 	int n = 0;
 
+	if (head == NULL || *head == NULL)
+		return (0);
+
 	/*clone head to temp*/
 	temp = *head;
 	/*move head to next node*/
