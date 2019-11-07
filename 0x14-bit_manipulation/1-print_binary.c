@@ -2,10 +2,10 @@
 #include "holberton.h"
 
 /**
- * binary_to_uint - converts a binary number to an unsigned int
- * @b: pointer to an array of numbers which are binary
+ * print_binary - prints the binary representation of a number
+ * @n: ul int
  *
- * Return: Unsigned int
+ * Return: none
  */
 
 void print_binary(unsigned long int n)
