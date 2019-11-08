@@ -13,8 +13,11 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int mask = 1;
 	unsigned int i = 0;
 
-	if (*n < mask)
+	if (n == NULL)
 		return (-1);
+
+	if (*n == 0)
+		return (1);
 
 	while (mask > 0)
 	{
