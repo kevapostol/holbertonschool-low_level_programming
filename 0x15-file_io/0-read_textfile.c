@@ -31,11 +31,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	read(fd, buf, letters);
-	write(1, buf, letters);
-
-	close(fd);
-
 	for (count = 0; buf[count]; count++)
 		;
+
+	if (count != letters)
+		return (0);
+
+	write(1, buf, letters);
+	close(fd);
+	free(buf);
+
 	return (count);
 }
