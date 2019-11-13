@@ -13,7 +13,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, strLen, w_stat;
+	int fd, strLen;
 
 	if (filename == NULL)
 		return (-1);
@@ -31,11 +31,8 @@ int create_file(const char *filename, char *text_content)
 		return (1);
 	}
 	else
-		w_stat = write(fd, text_content, strLen);
-	if (w_stat < 0)
-	{
-		return (-1);
-	}
+		write(fd, text_content, strLen);
+
 	close(fd);
 	return (1);
 }
