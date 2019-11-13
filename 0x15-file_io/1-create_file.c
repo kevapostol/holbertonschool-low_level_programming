@@ -5,10 +5,10 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - reads a text file and prints it to the standard output
+ * create_file - function that creates a file
  * @filename: file name
- * @letters: size
- * Return: ssize_t
+ * @text_content: content to be added to file
+ * Return: success: 1 not success: -1
  */
 
 int create_file(const char *filename, char *text_content)
