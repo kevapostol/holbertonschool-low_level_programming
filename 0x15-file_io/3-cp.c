@@ -49,32 +49,28 @@ int main(int argc, char **argv)
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
-		err("Error test1", argv[1], 98);
+		err("Error: Can't read from file", argv[1], 98);
 
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
-		err("Error test2", argv[2], 99);
+		err("Error: Can't write to", argv[2], 99);
 
 	do {
 		rc = read(fd_from, buffer, 1024);
-		/*check*/
 		if (rc == -1)
 		err("Error: Can't read from file", argv[1], 98);
 
 		wc = write(fd_to, buffer, rc);
-		/*check*/
 		if (wc == -1)
 		err("Error: Can't write to", argv[2], 99);
 
 	} while (rc == 1024);
 
 	cc = close(fd_from);
-	/*check*/
 	if (cc == -1)
 		errClose("Error: Can't close fd", (int) fd_from, 100);
 
 	cc = close(fd_to);
-	/*check*/
 	if (cc == -1)
 		errClose("Error: Can't close fd", (int) fd_to, 100);
 
