@@ -19,6 +19,20 @@ void err(char *msg, char *file, int status)
 }
 
 /**
+ * errClose - prints out an error message to stderr
+ * @msg: message string
+ * @fd: file string
+ * @status: int status for exit
+ * Return: no Return value
+ */
+void errClose(char *msg, int fd, int status)
+{
+	dprintf(STDERR_FILENO, "%s %d\n", msg, fd);
+	exit(status);
+}
+
+
+/**
  * main - main file
  * @argc: argument count
  * @argv: argument vector
@@ -35,11 +49,11 @@ int main(int argc, char **argv)
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
-		err("Error: Can't read from file", argv[1], 98);
+		err("Error test1", argv[1], 98);
 
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
-		err("Error: Can't write to", argv[2], 99);
+		err("Error test2", argv[2], 99);
 
 	do {
 		rc = read(fd_from, buffer, 1024);
@@ -57,17 +71,12 @@ int main(int argc, char **argv)
 	cc = close(fd_from);
 	/*check*/
 	if (cc == -1)
-	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d", (int) fd_from);
-		exit(100);
-	}
+		errClose("Error: Can't close fd", (int) fd_from, 100);
+
 	cc = close(fd_to);
 	/*check*/
 	if (cc == -1)
-	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d", (int) fd_to);
-		exit(100);
-	}
+		errClose("Error: Can't close fd", (int) fd_to, 100);
 
 	return (0);
 }
