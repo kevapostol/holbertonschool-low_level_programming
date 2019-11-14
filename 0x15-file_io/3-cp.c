@@ -35,11 +35,11 @@ int main(int argc, char **argv)
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
-		err("Error: Can't open file", argv[1], 96);
+		err("Error: Can't read from file", argv[1], 98);
 
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
-		err("Error: Can't open file", argv[2], 96);
+		err("Error: Can't write to", argv[2], 99);
 
 	do {
 		rc = read(fd_from, buffer, 1024);
