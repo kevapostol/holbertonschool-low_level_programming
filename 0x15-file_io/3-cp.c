@@ -15,7 +15,7 @@
 void err(char *msg, char *file, int status)
 {
 	dprintf(STDERR_FILENO, "%s %s\n", msg, file);
-	exit (status);
+	exit(status);
 }
 
 /**
