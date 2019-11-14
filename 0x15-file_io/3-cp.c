@@ -57,12 +57,17 @@ int main(int argc, char **argv)
 	cc = close(fd_from);
 	/*check*/
 	if (cc == -1)
-		err("Error: Can't close fd", fd_from, 100);
-
+	{
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d", (int) fd_from);
+		exit(100);
+	}
 	cc = close(fd_to);
 	/*check*/
 	if (cc == -1)
-		err("Error: Can't close fd", fd_to, 100);
+	{
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d", (int) fd_to);
+		exit(100);
+	}
 
 	return (0);
 }
