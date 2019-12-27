@@ -206,9 +206,6 @@ julien@ubuntu:~/c/0x00$
 ```
 
 #### 8. [Intel](https://github.com/kevapostol/holbertonschool-low_level_programming/blob/master/0x00-hello_world/100-intel) 
-
-Score:  0.00%  (Checks completed: 0.00%)
-
 Write a script that generates the assembly code (Intel syntax) of a C code and save it in an output file.
 
 -   The C file name will be saved in the variable  `$CFILE`.
