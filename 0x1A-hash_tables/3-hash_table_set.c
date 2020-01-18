@@ -58,13 +58,11 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 	hash_node_t *head;
 
 	idx =  key_index((const unsigned char *) node->key, ht->size);
-	/*printf("idx: is %lu\n", idx);*/
 	head = ht->array[idx];
 
 	if (head == NULL)
 	{
 		ht->array[idx] = node;
-		/*printf("I put the node to the index\n");*/
 		return (1);
 	}
 	else if (head != NULL)
@@ -76,7 +74,6 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 			{
 				head->value = node->value;
 				free(node);
-				/*printf("I replaced value of the node\n");*/
 				return (1);
 			}
 			head = head->next;
@@ -84,8 +81,7 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 
 		head = ht->array[idx];
 		node->next = head;
-		ht->array[idx] = node;
-		/*printf("I put node at the beginning\n");*/
+		ht->array[idx] = node;	
 		return (1);
 	}
 	return (0);
