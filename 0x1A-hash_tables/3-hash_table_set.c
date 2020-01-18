@@ -10,11 +10,11 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	if (ht == NULL || key == NULL)
-		return (0);
-
 	hash_node_t *newnode;
 	int status;
+
+	if (ht == NULL || key == NULL)
+		return (0);
 
 	newnode = malloc(sizeof(hash_node_t));
 	if (newnode == NULL)
@@ -81,7 +81,7 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 
 		head = ht->array[idx];
 		node->next = head;
-		ht->array[idx] = node;	
+		ht->array[idx] = node;
 		return (1);
 	}
 	return (0);
