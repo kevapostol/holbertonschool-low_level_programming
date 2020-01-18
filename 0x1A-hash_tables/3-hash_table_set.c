@@ -20,20 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (newnode == NULL)
 		return (0);
 
-	newnode->key = strdup(key);
-	if (newnode->key == NULL)
-	{
-		free(newnode);
-		return (0);
-	}
-
+	newnode->key = strdup(key);	
 	newnode->value = strdup(value);
-	if (newnode->value == NULL)
-	{
-		free(newnode);
-		return (0);
-	}
-
 	newnode->next = NULL;
 
 	/* helper function */
@@ -65,26 +53,23 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 		ht->array[idx] = node;
 		return (1);
 	}
-	else if (head != NULL)
-	{
-		while (head != NULL && head->next != NULL)
-		{
-			/* for clashing, replace the value of the node */
-			if (strcmp(head->key, node->key) == 0)
-			{
-				head->value = node->value;
-				free(node);
-				return (1);
-			}
-			head = head->next;
-		}
 
-		head = ht->array[idx];
-		node->next = head;
-		ht->array[idx] = node;
-		return (1);
+	while (head != NULL)
+	{
+		/* for clashing, replace the value of the node */
+		if (strcmp(head->key, node->key) == 0)
+		{
+			ht->array[idx]->value = node->value;
+			free(node);
+			return (1);
+		}
+		head = head->next;
 	}
-	return (0);
+
+	head = ht->array[idx];
+	node->next = head;
+	ht->array[idx] = node;
+	return (1);
 }
 
 /**
