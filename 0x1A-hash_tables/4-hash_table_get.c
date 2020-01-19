@@ -3,7 +3,7 @@
 /**
  * hash_table_get - a function that gets a value from the hash table.
  * @ht: a hash table
- * @key: a key 
+ * @key: a key
  *
  * Return: returns the value of a hash table
  */
