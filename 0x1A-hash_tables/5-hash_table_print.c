@@ -35,8 +35,7 @@ void hash_table_print(const hash_table_t *ht)
 			/* prints key and value*/
 			printf("'%s': '%s'", head->key, head->value);
 
-			if (idx != 0)
-				flag_first = 0;
+			flag_first = 0;
 			head = head->next;
 		}
 		idx++;
