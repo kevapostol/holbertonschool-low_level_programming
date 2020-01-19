@@ -30,7 +30,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (status == 1)
 		return (1);
 	else
+	{
 		return (0);
+	}
+		
 }
 
 /**
@@ -59,8 +62,9 @@ int attach_node_to_ht(hash_table_t *ht, hash_node_t *node)
 		/* for clashing, replace the value of the node */
 		if (strcmp(head->key, node->key) == 0)
 		{
-			ht->array[idx]->value = node->value;
-			free(node);
+			free(ht->array[idx]->value);
+			ht->array[idx]->value = strdup(node->value);
+			freenode(node);
 			return (1);
 		}
 		head = head->next;
