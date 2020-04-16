@@ -10,7 +10,8 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int prev = 0, x;
+	int prev = 0;
+	int x;
 	int step = (int)floor(sqrt(size));
 
 	if (array == NULL || size == 0)
